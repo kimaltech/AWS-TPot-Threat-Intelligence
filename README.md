@@ -51,7 +51,7 @@ To balance adversary exposure with administrative isolation, network ingress was
 ### 1. Global Reconnaissance & Port Activity
 Within 24 hours of exposing the public IPv4 address, automated scanners and botnets recorded over 1,000 distinct attack attempts spanning multiple continents.
 
-![Global Honeypot Overview](images/global-overview.png)
+![Global Honeypot Overview](images/global-overview.jpeg)
 
 - **Primary Targets:** SSH (Port 22) and SMB (Port 445) accounted for the overwhelming majority of ingress attempts.
 - **Top Geographic Origins:** Concentrated scanner traffic originating from nodes across the United States, the Netherlands, Brazil, and East Asia.
@@ -59,7 +59,7 @@ Within 24 hours of exposing the public IPv4 address, automated scanners and botn
 ### 2. High-Velocity SSH Brute-Forcing (Cowrie)
 Cowrie captured interactive session attempts, brute-force dictionaries, and client software fingerprints.
 
-![Cowrie Credential Tag Cloud & HASSH](images/cowrie-creds.png)
+![Cowrie Credential Tag Cloud & HASSH](images/cowrie-creds.jpeg)
 
 - **Credential Spraying:** Attackers almost exclusively brute-forced standard default accounts (`root`, `admin`), attempting high-frequency dictionary passwords including `54321`, `(blank)`/null entries, and default vendor passwords (`123456`, `password`).
 - **HASSH Client Fingerprinting:** By computing MD5 hashes of the initial SSH key exchange and cipher list, scanners were fingerprinted independently of rotating source IP addresses.
@@ -67,7 +67,7 @@ Cowrie captured interactive session attempts, brute-force dictionaries, and clie
 ### 3. Network Intrusion Detection & TLS Fingerprinting (Suricata)
 Suricata provided packet-level inspection and traffic anomaly classification prior to service engagement.
 
-![Suricata NIDS Dashboard](images/suricata-telemetry.png)
+![Suricata NIDS Dashboard](images/suricata-telemetry.jpeg)
 
 - **User-Agent Masquerading:** Attackers frequently forged browser User-Agent headers to blend with legitimate HTTP traffic.
 - **JA3 / JA4 Fingerprinting:** TLS handshake profiling identified underlying automation engines (e.g., Python scripts, Go HTTP clients, zgrab scanners) regardless of forged application-layer headers.
