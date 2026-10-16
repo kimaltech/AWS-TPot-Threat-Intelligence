@@ -31,7 +31,7 @@ To balance adversary exposure with administrative isolation, network ingress was
    - Web management dashboard remapped to TCP `64297`.
    - Both management ports strictly restricted to an authorized management IP.
 
-![AWS Security Group Configuration](images/aws-security-group.png)
+![AWS Security Group Configuration](images/aws-security-group.jpeg)
 
 ---
 
